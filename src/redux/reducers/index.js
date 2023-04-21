@@ -1,23 +1,17 @@
-const initialState = {
-    people: [],
-    planets: [],
-};
+import { combineReducers } from 'redux';
+import { news } from './news';
+import { errors } from './errors';
+import { createReduxHistoryContext } from 'redux-first-history';
+import { createBrowserHistory } from 'history';
+export const { createReduxHistory, routerMiddleware, routerReducer } =
+    createReduxHistoryContext({
+        history: createBrowserHistory(),
+    });
 
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'SET_PEOPLE':
-            return {
-                ...state,
-                people: [...state.people, ...action.payload],
-            };
-        case 'SET_PLANETS':
-            return {
-                ...state,
-                planets: [...state.planets, ...action.payload],
-            };
-        default:
-            return state;
-    }
-};
+const reducer = combineReducers({
+    router: routerReducer,
+    news,
+    errors,
+});
 
 export default reducer;
