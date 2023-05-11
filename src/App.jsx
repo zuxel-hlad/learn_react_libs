@@ -11,7 +11,7 @@ const App = () => {
                 <input type="password" placeholder="Password" />
                 <button
                     className={styles.button}
-                    onClick={() => setIsOpen(prevOpen => (prevOpen = !isOpen))}
+                    onClick={() => setIsOpen(prevOpen => !prevOpen)}
                 >
                     Login
                 </button>
