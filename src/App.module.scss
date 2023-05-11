@@ -1,0 +1,23 @@
+.parent {
+    @apply m-8 mt-0;
+
+    .heading {
+        @apply text-xl font-bold text-center text-white my-6;
+    }
+
+    > div {
+        @apply shadow-xl rounded-md overflow-hidden;
+
+        input {
+            @apply block w-full bg-white bg-opacity-10 border-r-2 border-transparent focus:border-slate-400 py-3 px-4 placeholder:text-slate-500 outline-none text-slate-50 transition-colors;
+        }
+
+        .button {
+            @apply btn-primary transition-colors text-shadow min-h-[3.5rem];
+        }
+    }
+
+    .wrapper {
+        @apply container px-3 mx-auto;
+    }
+}
